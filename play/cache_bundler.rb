@@ -10,7 +10,8 @@ data = {
   },
   repository: {
     source_url: 'http://github.com/travis-ci/travis-support.git',
-    github_id: 42
+    github_id: 42,
+    slug: 'travis-support'
   },
   source: {
     id: 1,
@@ -53,10 +54,6 @@ data = {
   }
 }
 
-# require 'yaml'
-# data[:config] = YAML.load_file('play/config.yml')
-
-# script = Travis::Build.script(data, logs: { build: false, state: true })
 script = Travis::Build.script(data, logs: { build: false, state: true })
 script = script.compile
 puts script
